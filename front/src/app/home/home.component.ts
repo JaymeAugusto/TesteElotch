@@ -24,21 +24,9 @@ export class HomeComponent implements OnInit {
 
   getPersons(){
     this.personService.getPersons().subscribe(data => {
-
-      console.log(data);
-      
-      // this.geraPerson = {
-      //   id: data.id,
-      //   nome: data.nome,
-      //   rg: data.rg,
-      //   dataNasc: data.dataNascimento
-      // };
-      this.geraPerson = data;
-
-      this.persons = this.geraPerson;
+      this.persons = data;
 
       console.log(this.persons);
-      
     });
   }
 
