@@ -1,0 +1,14 @@
+<menu></menu>
+
+<main class="container-page">
+    <div class="container">
+        <div>Id: {{ id }}</div>
+        <div>Nome: {{person.nome}}</div>
+        <div>RG: {{ person.rg }}</div>
+        <div>Data de Nascimento: {{ person.dataNascimento | date:'dd/MMM/yyyy' }}</div>
+    </div>
+    
+    <div class="container-contact">
+       <contact-person></contact-person>
+    </div>
+</main>

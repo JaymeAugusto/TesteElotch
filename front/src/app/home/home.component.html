@@ -1,1 +1,8 @@
-<p>home works!</p>
+<menu></menu>
+
+<div class="container">
+    <a *ngFor="let person of persons" class="container-person" [routerLink]="[person.id]">
+        <div>Nome: {{person.nome}}</div>
+        <div>Datanasc: {{ person.dataNascimento | date:'dd/MMM/yyyy' }}</div>
+    </a>
+</div>

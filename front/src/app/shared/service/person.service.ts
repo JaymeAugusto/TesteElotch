@@ -1,10 +1,7 @@
+import { FormGroup } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Person } from '../model/person.model';
-import { map } from 'rxjs/operators';
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -23,30 +20,15 @@ export class PersonService {
     private httpClient: HttpClient
   ) { }
 
-  // public getPersons(): Observable<Person[]>{
-  //   return this.httpClient.get<Person>(`${this.apiUrl}/persons`).pipe(map(res => res)).subscribe(dados => {
-  //     console.log(dados); 
-  //   }
-  // }
-
   public getPersons(): Observable<any>{
-    return this.httpClient.get(this.apiUrl + "/persons")
-      
+    return this.httpClient.get(`${this.apiUrl}/persons`)
   }
 
-  // public postPerson(){
-  //   this.httpClient.post(
-  //     this.apiUrl + "/create-person",JSON.stringify({
-  //       "nome": "Rafao",
-  //       "rg": "1324567-8",
-  //       "dataNascimento": "1995-07-21"}))
-  //     .pipe(map(res => res))
-  //     .subscribe(dados => {
-  //       console.log(dados);
-        
-  //       // reseta o Form
-  //       // this.resetar();
-  //     },
-  //     (error: any) => alert('Erro ao enviar Formulário'));
-  // }
+  public getPersonsId(id: number): Observable<any>{
+    return this.httpClient.get(`${this.apiUrl}/person/${id}`)
+  }
+
+  public postPerson(formulario: FormGroup): Observable<any>{
+    return this.httpClient.post(`${this.apiUrl}/create-person`, JSON.stringify(formulario.value), this.httpOptions )
+  }
 }

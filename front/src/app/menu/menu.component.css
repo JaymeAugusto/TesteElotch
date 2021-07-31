@@ -1,0 +1,23 @@
+.header-navbar{
+    width: 100%;
+    background-color: rgb(173, 162, 162);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 3fr;
+    grid-template-rows: 60px;
+}
+
+.title{
+    font-weight: bolder;
+    padding: 10px;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.buttons{
+    color: white;
+    padding-top: 17px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
