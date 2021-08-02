@@ -4,7 +4,7 @@
     grid-template-areas: ' t t '
                          ' n n ' 
                          'rg d '
-                         ' b b ';
+                         ' br bs ';
     margin: 30px 14%;
     padding: 20px 1%;
     border-radius: 20px 0;
@@ -49,8 +49,8 @@ input {
 }
 
 .btn-submit{
-    grid-area: b;
-    width: 90px;
+    grid-area: bs;
+    width: 200px;
     height: 40px;
     background-color: rgb(173, 162, 162);
     color: white;
@@ -59,4 +59,19 @@ input {
     border-radius: 5px;
     border: none;
     margin: 20px auto 10px;
+    cursor: pointer;
+}
+
+.btn-return{
+    grid-area: br;
+    width: 90px;
+    height: 40px;
+    background-color: rgb(230, 230, 230);
+    color: rgb(92, 92, 92);
+    font-weight: bolder;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    margin: 20px 30px 10px;
+    cursor: pointer;
 }

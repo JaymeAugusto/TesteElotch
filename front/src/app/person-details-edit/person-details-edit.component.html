@@ -1,0 +1,36 @@
+<menu></menu>
+
+<form class="form-controller" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="from-title">
+        <h1>Formulário Editar Pessoa</h1>
+    </div>
+    <div class="from-nome">
+        <div>
+            <label for="nome">Nome:</label>
+        </div>
+        <div>
+            <input type="text" formControlName="nome" id="nome" (input)="onInput()">
+        </div>
+    </div>
+    <div class="from-rg">
+        <div>
+            <label for="rg">RG:</label>
+        </div>
+        <div>
+            <input type="text" formControlName="rg" id="rg" (input)="onInput()">
+        </div>
+    </div>
+    <div class="from-dataNasc"> 
+        <div>
+            <label for="dataNascimento">Data de Nascimento:</label>
+        </div>
+        <div>
+            <input type="datetime" formControlName="dataNascimento" id="dataNascimento" (input)="onInput()">
+        </div>
+    </div>
+
+    <button type="submit" class="btn-submit">Salvar Alterações</button>
+    <button class="btn-return" (click)="return()">Voltar</button>
+
+    <!-- <app-form-debug [form]="formulario" ></app-form-debug> -->
+</form>

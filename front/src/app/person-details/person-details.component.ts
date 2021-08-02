@@ -1,7 +1,7 @@
 import { PersonService } from './../shared/service/person.service';
 import { Person } from './../shared/model/person.model';
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -28,14 +28,33 @@ export class PersonDetailsComponent implements OnInit {
         this.getPersonId(this.id);
       }
     );
-    
   }
 
   getPersonId(id: number){
     this.personService.getPersonsId(id).subscribe(data => {
       this.person = data;
+    });
+  }
 
-      // console.log(this.person);
+  deletePersonId(id: number){
+    this.personService.deletePerson(id).subscribe(data =>{})
+
+    this.redirecionar();
+  }
+
+  editarContato(){
+    this.router.navigate([`${this.id}/edit`]);
+  }
+
+  excluirContato(){
+    if(confirm('Tem certeza que deseja excluir usuario?')){
+      this.deletePersonId(this.id)
+    }
+  }
+
+  redirecionar(){
+    timer(800).subscribe( x =>{
+      this.router.navigate(['/']);
     });
   }
 

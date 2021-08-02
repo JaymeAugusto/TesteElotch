@@ -2,6 +2,8 @@ import { PersonService } from './../shared/service/person.service';
 import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { timer } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'create-person',
@@ -14,7 +16,8 @@ export class CreatePersonComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private personService: PersonService
+    private personService: PersonService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +34,7 @@ export class CreatePersonComponent implements OnInit {
       this.postPerson(this.formulario);
       alert('formulário enviado com Sucesso!');
       this.resetar();
+      this.rediresionar();
     } else {
       console.log('formulario invalido');  
       this.verificaValidacoesFrom(this.formulario);
@@ -46,6 +50,12 @@ export class CreatePersonComponent implements OnInit {
 
   resetar(){
     this.formulario.reset();
+  }
+
+  rediresionar(){
+    timer(2000).subscribe( x =>{
+      this.router.navigate(['/']);
+    });
   }
 
   verificaValidacoesFrom(formGroup: FormGroup){

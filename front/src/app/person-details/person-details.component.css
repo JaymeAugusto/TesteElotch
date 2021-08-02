@@ -1,14 +1,68 @@
 .container-page{
     display: grid;
-    grid-template-columns: 4fr 10fr;
+    grid-template-columns: 5fr 10fr;
 }
 
-.container{
+.container-person{
     padding: 20px 20px;
     margin: 20px auto 0;
     display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 'id id'
+                        'nome nome'
+                        'rg rg'
+                        'dn dn' 
+                        'bd be';
     border-radius: 20px 0;
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.350);
+}
+
+.person{
+    margin: 3px;
+}
+
+.person-id{
+    grid-area: id;
+}
+.person-nome{
+    grid-area: nome;
+}
+.person-rg{
+    grid-area: rg;
+}
+.person-dataNasc{
+    grid-area: dn;
+}
+
+.btn-edit{
+    grid-area: be;
+    width: 90px;
+    background-color: rgb(173, 162, 162);
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    margin: 20px auto 0;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    float: left;
+}
+
+.btn-delete{
+    grid-area: bd;
+    width: 90px;
+    background-color: rgb(230, 230, 230);
+    color: rgb(92, 92, 92);
+    font-weight: bolder;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    margin: 20px 0 0;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .container-contact{

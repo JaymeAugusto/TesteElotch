@@ -1,11 +1,13 @@
 <menu></menu>
 
 <main class="container-page">
-    <div class="container">
-        <div>Id: {{ id }}</div>
-        <div>Nome: {{person.nome}}</div>
-        <div>RG: {{ person.rg }}</div>
-        <div>Data de Nascimento: {{ person.dataNascimento | date:'dd/MMM/yyyy' }}</div>
+    <div class="container-person">
+        <div class="person person-id">Id: {{ id }}</div>
+        <div class="person person-nome">Nome: {{person.nome}}</div>
+        <div class="person person-rg">RG: {{ person.rg }}</div>
+        <div class="person person-dataNasc">Data de Nascimento: {{ person.dataNascimento | date:'dd/MMM/yyyy' }}</div>
+        <a class="btn-edit" (click)="editarContato()">Editar</a>
+        <a class="btn-delete" (click)="excluirContato()">Excluir</a>
     </div>
     
     <div class="container-contact">

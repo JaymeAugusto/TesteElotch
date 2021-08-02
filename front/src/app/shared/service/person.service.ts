@@ -29,6 +29,14 @@ export class PersonService {
   }
 
   public postPerson(formulario: FormGroup): Observable<any>{
-    return this.httpClient.post(`${this.apiUrl}/create-person`, JSON.stringify(formulario.value), this.httpOptions )
+    return this.httpClient.post(`${this.apiUrl}/create-person`, JSON.stringify(formulario.value), this.httpOptions)
+  }
+
+  public putPerson(id: number, formulario: FormGroup): Observable<any>{
+    return this.httpClient.put(`${this.apiUrl}/update-person/${id}`, JSON.stringify(formulario.value), this.httpOptions)
+  }
+
+  public deletePerson(id: number): Observable<any>{
+    return this.httpClient.delete(`${this.apiUrl}/person/${id}`)
   }
 }
